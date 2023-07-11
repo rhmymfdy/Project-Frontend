@@ -1,10 +1,26 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const nav = ()=>{
 
+    const navigasi = useNavigate()
     const [navbar, setNavbar] = useState(false)
 
+    const param = useParams()
+
+    const LogOut = async(e) => {
+        e.preventDefault()
+        try {
+            await axios.delete('http://localhost:5000/logout')
+            navigasi('/')
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <nav className="w-full bg-white shadow fixed z-10">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -59,43 +75,45 @@ const nav = ()=>{
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-grey hover:text-indigo-200">
-                                <Link to="/">Home</Link>
+                                <Link to={`/home`}>Home</Link>
                             </li>
                             <li className="text-grey hover:text-indigo-200">
-                                <Link to={'/Package'}>Package</Link>
+                                <Link to={`/Package`}>Package</Link>
                             </li>
                             <li className="text-grey hover:text-indigo-200">
-                                <Link to={'/Shop'}>Shop</Link>
+                                <Link to={'/frame'}>Shop</Link>
                             </li>
                             <li className="text-grey hover:text-indigo-200">
-                                <a href="javascript:void(0)">Galery</a>
+                                <Link to={'/galeri'}>Galery</Link>
                             </li>
                             <li className="text-grey hover:text-indigo-200">
-                                <Link to={'/Kontak'}>Contact US</Link>
+                                <Link to={'/kontak'}>Contact US</Link>
                             </li>
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:hidden">
 
                         
-                        <Link className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800" to={"/Login"}>Sign in</Link>
-                    <a
-                        href="javascript:void(0)"
+                        <Link className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800" to={"/Login"}>Logn In</Link>
+                    <Link
+                        to="/SignUp"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Sign up
-                    </a>
+                    </Link> 
+                    <button className="px-4 py-2 w-full text-gray-800 bg-white rounded-md shadow hover:bg-gray-100" onClick={LogOut}>Log Out</button>
                 </div>
                     </div>
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
-                        <Link className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800" to={"/Login"}>Sign in</Link>
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                        <Link className="px-4 py-2 text-white bg-blue-700 rounded-md shadow hover:bg-gray-800" to={"/Login"}>Logn In</Link>
+                    <Link
+                        to="/SignUp"
+                        className="px-4 py-2 text-white bg-blue-700 rounded-md shadow hover:bg-gray-800"
                     >
-                        Sign up
-                    </a>
+                        Sign Up
+                    </Link>
+                    <button className="px-4 py-2 text-white bg-zinc-700 rounded-md shadow hover:bg-gray-800" onClick={LogOut} >Log Out</button>
                 </div>
             </div>
         </nav>

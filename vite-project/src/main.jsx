@@ -1,13 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import PageShop from './pageShop'
-import PageLogin from './PageLogin'
-import PagePackage from './PagePackage'
-import PageHome from './PageHome'
-import PageContact from './Contac'
-import './shop.css'
 import '@material-tailwind/react'
+
+import axios from 'axios'
+axios.defaults.withCredentials = true
+
+// Pages
+import PageShop from './pages/pageShop'
+import PageLogin from './pages/PageLogin'
+import PagePackage from './pages/PagePackage'
+import PageHome from './pages/PageHome'
+import PageContact from './pages/Contac'
+import SignUp from './pages/PageSignUp'
+import LandingPage from './pages/LangingPage'
+import Invoice from './pages/invoicePage'
+import AddFrame from './components/Shop/addFrame'
+import DetailProduk from './components/Package/ChardPackage'
+import DetilFrame from './components/Shop/detil'
+import PageAdmin from './pages/PageAdmin'
+import IsiGalery from './components/Galery/IsiGalery'
+import AddPackage from './components/Package/AddPackage'
+
+// css
 import './index.css'
+
 
 
 
@@ -17,18 +33,23 @@ import {
   RouterProvider,
   Link
 } from "react-router-dom";
+import FinisSewa from './components/Package/FinisSewa'
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element : <LandingPage/>
+  },
+  {
+    path: "/home",
     element: <PageHome/>
   },
   {
-    path: "/Shop",
+    path: "/frame",
     element: <PageShop/>
   },
   {
-    path: "/Login",
+    path: "/login",
     element: <PageLogin/>
   },
   {
@@ -36,8 +57,44 @@ const router = createBrowserRouter([
     element: <PagePackage/>
   },
   {
-    path: "/Kontak",
+    path: "/Package/:id",
+    element: <DetailProduk/>
+  },
+  {
+    path: "/add",
+    element: <AddPackage/>
+  },
+  {
+    path: "/Finis",
+    element: <FinisSewa/>
+  },
+  {
+    path: "/kontak",
     element: <PageContact/>
+  },
+  {
+    path:"/signup",
+    element:<SignUp/>
+  },
+  {
+    path:'/detil-frame/:id',
+    element:<DetilFrame/>
+  },
+  {
+    path:'/add-frame',
+    element:<AddFrame/>
+  },
+  {
+    path:'/invoice/:id',
+    element:<Invoice/>
+  },
+  {
+    path:'/admin',
+    element:<PageAdmin/>
+  },
+  {
+    path:'/galeri',
+    element:<IsiGalery/>
   }
 ]);
 

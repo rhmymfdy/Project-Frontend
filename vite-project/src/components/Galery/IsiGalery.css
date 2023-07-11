@@ -1,0 +1,80 @@
+.ndas {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+      justify-content: space-around;
+  border-bottom: 2px solid #CF7500;
+  padding-bottom: 20px;
+}
+.ndas h3 {
+  font-size: 2em;
+  font-weight: bolder;
+  background-color: #1f203a;
+  padding: 20px;
+  border-radius: 5px;
+  color: #CF7500;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 70px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.kotak {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.kotak .poto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 32.5%;
+}
+.kotak .poto img {
+  width: 100%;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.kotak .poto img:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  z-index: 0.5;
+}
+.tombol {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 170px;
+}
+.tombol a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #1f203a;
+  padding: 15px 40px;
+  border-radius: 5px;
+  border: 2px solid #1f203a;
+}
+.tombol a:hover {
+  background-color: #1f203a;
+  color: whitesmoke;
+}
+
+ul, li {
+  text-decoration: none;
+  list-style: none;
+}

@@ -1,0 +1,39 @@
+.gambar{
+  width : 100%;
+
+
+}
+.kotakk{
+  padding: 10px
+}
+.bungkus{
+  width : 100%;
+
+
+
+
+}
+.bungkus2{
+  margin-top:0;
+}
+.awass{
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-content : space-around;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 6rem;
+}
+.tombol{
+  margin : auto;
+  align-item : center;
+  display : flex;
+  position : center;
+  margin-bottom : 30px;
+  width : 100%;
+  justify-content : center;
+
+}
+

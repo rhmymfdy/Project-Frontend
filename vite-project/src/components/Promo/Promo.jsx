@@ -7,7 +7,7 @@ const Promo = ()=>{
         <div className=" carousel-inner relative overflow-hidden w-full">
             {/*Slide 1*/}
             <input className="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden defaultChecked="checked" />
-            <div className="carousel-item absolute opacity-0" style={{height: '50vh'}}>
+            <div className="carousel-item absolute opacity-0 mt-96 " style={{height: '50vh'}}>
             <div className="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right">
                 <img className="relative" src="family1.jpg" alt="" />
                 <div className="container absolute z-50 mx-auto">
@@ -24,7 +24,7 @@ const Promo = ()=>{
             {/*Slide 2*/}
             <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden />
             <div className="carousel-item absolute opacity-0 bg-cover bg-right" style={{height: '50vh'}}>
-            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" >
+            <div className=" h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" >
                 <img className="relative" src="family2.jpg" alt="" />
                 <div className="absolute z-50 container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
@@ -39,7 +39,7 @@ const Promo = ()=>{
             {/*Slide 3*/}
             <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden />
             <div className="carousel-item absolute opacity-0" style={{height: '50vh'}}>
-            <div className="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom">
+            <div className=" h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom">
                 <img className="relative" src="modelproduct.jpg" alt="" />
                 <div className="absolute z-50 container mx-auto">
                 <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
